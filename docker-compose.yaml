@@ -1,0 +1,8 @@
+services:
+  practicum:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    stdin_open: true
+    tty: true
+    restart: "no"
