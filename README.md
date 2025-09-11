@@ -68,7 +68,9 @@ Implement methods inside of BookList class
 
 ### Implement book borrowing logic
 
-Book class should keep track who it is being borrowed by
+~~Book class should keep track who it is being borrowed by~~
+
+Each Book class will have an isBorrowed property
 
 ### Fill Admin and Member class
 
