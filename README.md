@@ -60,6 +60,8 @@ Prompt user for name, id, and role at app start to create the appropriate subcla
 
 Implement methods inside of BookList class
 
+- addBook
+- removeBook
 - findBook
 - returnBook
 - findBook
