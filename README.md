@@ -49,3 +49,25 @@ COSC6025036 (JSCA - LEC) Session 7
 ├── Admin.java
 └── Member.java
 ```
+
+# Tasks
+
+### Login
+
+Prompt user for name, id, and role at app start to create the appropriate subclass
+
+### BookList
+
+Implement methods inside of BookList class
+
+- findBook
+- returnBook
+- findBook
+
+### Implement book borrowing logic
+
+Book class should keep track who it is being borrowed by
+
+### Fill Admin and Member class
+
+I don't know what to fill these with
