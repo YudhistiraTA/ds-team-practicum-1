@@ -1,36 +1,12 @@
-class BorrowStatus {
-    private String memberId;
-    private String borrowDate;
-    private String returnDate;
-
-    public BorrowStatus(String memberId, String borrowDate, String returnDate) {
-        this.memberId = memberId;
-        this.borrowDate = borrowDate;
-        this.returnDate = returnDate;
-    }
-
-    public String getMemberId() {
-        return memberId;
-    }
-
-    public String getBorrowDate() {
-        return borrowDate;
-    }
-
-    public String getReturnDate() {
-        return returnDate;
-    }
-}
-
 public class Book {
     private String title;
     private String author;
-    private BorrowStatus borrowStatus;
+    private boolean isBorrowed;
 
-    public Book(String title, String author, BorrowStatus borrowStatus) {
+    public Book(String title, String author) {
         this.title = title;
         this.author = author;
-        this.borrowStatus = borrowStatus;
+        this.isBorrowed = false;
     }
 
     public String getTitle() {
@@ -41,11 +17,15 @@ public class Book {
         return author;
     }
 
-    public BorrowStatus getBorrowStatus() {
-        return borrowStatus;
+    public boolean isBorrowed() {
+        return isBorrowed;
     }
 
-    public void setBorrowStatus(BorrowStatus borrowStatus) {
-        this.borrowStatus = borrowStatus;
+    public void borrowBook() {
+        isBorrowed = true;
+    }
+
+    public void returnBook() {
+        isBorrowed = false;
     }
 }
