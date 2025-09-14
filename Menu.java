@@ -13,15 +13,14 @@ public class Menu {
 
     private void display() {
         System.out.println("\n===== MAIN MENU =====");
-        System.out.println("1. View All Books");
-        System.out.println("2. View Available Books");
-        System.out.println("3. Search Book by Title");
-        System.out.println("4. Borrow Book");
-        System.out.println("5. Return Book");
+        System.out.println("1. View Books");
+        System.out.println("2. Search Book by Title");
+        System.out.println("3. Borrow Book");
+        System.out.println("4. Return Book");
         if (user instanceof Admin) {
             System.out.println("--- Admin Options ---");
-            System.out.println("6. Add Book");
-            System.out.println("7. Remove Book");
+            System.out.println("5. Add Book");
+            System.out.println("6. Remove Book");
         }
         System.out.println("9. Switch User");
         System.out.println("0. Exit");
@@ -34,41 +33,40 @@ public class Menu {
         scanner.nextLine();
 
         switch (option) {
-            case 1 -> books.printAll();
-            case 2 -> books.printAvailable();
-            case 3 -> {
+            case 1 -> books.print();
+            case 2 -> {
                 System.out.print("Enter book title: ");
                 String title = scanner.nextLine();
                 Book book = books.findBook(title);
                 System.out.println(book != null ? book : "Book not found.");
             }
-            case 4 -> {
+            case 3 -> {
                 if (user instanceof Member) {
                     ((Member) user).borrowBook(books);
                 } else {
                     System.out.println("Only members can borrow books.");
                 }
             }
-            case 5 -> {
+            case 4 -> {
                 if (user instanceof Member) {
                     ((Member) user).returnBook(books);
                 } else {
                     System.out.println("Only members can return books.");
                 }
             }
-            case 6 -> {
+            case 5 -> {
                 if (user instanceof Admin) {
                     ((Admin) user).addBook(books);
                 }
             }
-            case 7 -> {
+            case 6 -> {
                 if (user instanceof Admin) {
                     ((Admin) user).removeBook(books);
                 }
             }
             case 9 -> {
                 Login login = new Login();
-                user = login.login(); // ganti user baru
+                user = login.login();
             }
             case 0 -> {
                 System.out.println("Exiting...");
@@ -77,6 +75,7 @@ public class Menu {
             default -> System.out.println("Invalid option.");
         }
     }
+
 
 
     public void run() {

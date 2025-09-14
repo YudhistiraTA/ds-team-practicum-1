@@ -37,26 +37,15 @@ public class BookList {
         return null;
     }
 
-    public void printAll() {
+    public void print() {
         if (count == 0) {
             System.out.println("No books available.");
             return;
         }
         for (int i = 0; i < count; i++) {
-            System.out.println((i + 1) + ". " + books[i]);
-        }
-    }
-
-    public void printAvailable() {
-        boolean found = false;
-        for (int i = 0; i < count; i++) {
-            if (!books[i].isBorrowed()) {
-                System.out.println((i + 1) + ". " + books[i]);
-                found = true;
-            }
-        }
-        if (!found) {
-            System.out.println("No available books.");
+            Book b = books[i];
+            System.out.println((i + 1) + ". " + b.getTitle() + " by " + b.getAuthor()
+                    + (b.isBorrowed() ? " (Borrowed)" : " (Available)"));
         }
     }
 
