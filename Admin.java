@@ -17,7 +17,7 @@ public class Admin extends User {
     }
 
     public void removeBook(BookList bookList) {
-        bookList.printAll();
+        bookList.print();
         if (bookList.getCount() > 0) {
             System.out.print("Enter book number to remove: ");
             int index = scanner.nextInt() - 1;

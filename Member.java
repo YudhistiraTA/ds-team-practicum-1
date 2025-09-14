@@ -9,7 +9,7 @@ public class Member extends User {
     }
 
     public void borrowBook(BookList bookList) {
-        bookList.printAvailable();
+        bookList.print();
         if (bookList.getCount() > 0) {
             System.out.print("Enter book number to borrow: ");
             int index = scanner.nextInt() - 1;
@@ -25,7 +25,7 @@ public class Member extends User {
     }
 
     public void returnBook(BookList bookList) {
-        bookList.printAll();
+        bookList.print();
         System.out.print("Enter book number to return: ");
         int index = scanner.nextInt() - 1;
         scanner.nextLine();
