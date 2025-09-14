@@ -4,11 +4,12 @@ public class Menu {
     private BookList books;
     private User user;
     private boolean hasNotExited = true;
-    Scanner scanner = new Scanner(System.in);
+    private Scanner scanner;
 
-    public Menu(BookList books, User user) {
+    public Menu(BookList books, User user, Scanner scanner) {
         this.books = books;
         this.user = user;
+        this.scanner = scanner;
     }
 
     private void display() {
