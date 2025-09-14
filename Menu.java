@@ -22,7 +22,7 @@ public class Menu {
             System.out.println("5. Add Book");
             System.out.println("6. Remove Book");
         }
-        System.out.println("7. Switch User");
+        System.out.println("9. Switch User");
         System.out.println("0. Exit");
         System.out.print("Choose option: ");
     }
@@ -64,7 +64,7 @@ public class Menu {
                     ((Admin) user).removeBook(books);
                 }
             }
-            case 7 -> {
+            case 9 -> {
                 user = User.login();
             }
             case 0 -> {
