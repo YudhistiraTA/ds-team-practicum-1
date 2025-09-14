@@ -38,14 +38,14 @@ public class Menu {
                 break;
             case 4:
                 if (user instanceof Admin) {
-                    // Add book logic
+                    ((Admin) user).addBook(books);
                 } else {
                     System.out.println("Invalid option.");
                 }
                 break;
             case 5:
                 if (user instanceof Admin) {
-                    // Remove book logic
+                    ((Admin) user).removeBook(books);
                 } else {
                     System.out.println("Invalid option.");
                 }

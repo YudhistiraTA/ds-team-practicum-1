@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 
+
 public class BookList {
     private ArrayList<Book> books;
 
@@ -24,5 +25,17 @@ public class BookList {
     public void returnBook(Book book) {}
 
     public void print() {
+        if (books.isEmpty()) {
+            System.out.println("No books available.");
+            return;
+        }
+        for (int i = 0; i < books.size(); i++) {
+            Book b = books.get(i);
+            System.out.println((i + 1) + ". " + b.getTitle() + " by " + b.getAuthor());
+        }
+    }
+
+    public ArrayList<Book> getBooks() {
+        return books;
     }
 }
