@@ -12,16 +12,25 @@ public class Menu {
     }
 
     private void display() {
-        System.out.println("Welcome, " + user.getName());
-        System.out.println("1. View Books");
-        System.out.println("2. Borrow Book");
-        System.out.println("3. Return Book");
+        System.out.println("==================================");
+        System.out.println(" Welcome, " + user.getName());
+        System.out.println("==================================");
+        System.out.println("User Options:");
+        System.out.println(" 1. View Books");
+        System.out.println(" 2. Borrow Book");
+        System.out.println(" 3. Return Book");
+        System.out.println(" 0. Exit");
+
         if (user instanceof Admin) {
-            System.out.println("4. Add Book");
-            System.out.println("5. Remove Book");
+            System.out.println("----------------------------------");
+            System.out.println("Admin Options:");
+            System.out.println(" 4. Add Book");
+            System.out.println(" 5. Remove Book");
         }
-        System.out.println("0. Exit");
+        System.out.println("==================================");
+        System.out.print("Choose option: ");
     }
+
 
     private void selectOption() {
         int option = -1;
