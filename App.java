@@ -3,9 +3,7 @@ public class App {
         Login login = new Login();
         User user = login.login();
 
-        new Menu(
-                new BookList(),
-                user
-        ).run();
+        BookList bookList = new BookList(100); // max 100 books
+        new Menu(bookList, user).run();
     }
 }

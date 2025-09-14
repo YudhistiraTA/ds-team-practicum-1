@@ -13,4 +13,13 @@ public class User {
     public void setName(String name) {
         this.name = name;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    // Polymorphic method
+    public void interact() {
+        System.out.println("User interacting with the system.");
+    }
 }

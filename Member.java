@@ -1,24 +1,40 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Scanner;
 
 public class Member extends User {
-    private List<Book> borrowedBooks;
+    private Scanner scanner = new Scanner(System.in);
 
-    public void borrowBook(Book book) {
-        if (!book.isBorrowed()) {
-            book.borrowBook();
-            borrowedBooks.add(book);
+    @Override
+    public void interact() {
+        System.out.println("Member can borrow or return books.");
+    }
+
+    public void borrowBook(BookList bookList) {
+        bookList.printAvailable();
+        if (bookList.getCount() > 0) {
+            System.out.print("Enter book number to borrow: ");
+            int index = scanner.nextInt() - 1;
+            scanner.nextLine();
+            Book book = bookList.getBook(index);
+            if (book != null && !book.isBorrowed()) {
+                book.borrowBook();
+                System.out.println("You borrowed: " + book.getTitle());
+            } else {
+                System.out.println("Invalid choice or already borrowed.");
+            }
         }
     }
 
-    public void returnBook(Book book) {
-        if (book.isBorrowed() && borrowedBooks.contains(book)) {
+    public void returnBook(BookList bookList) {
+        bookList.printAll();
+        System.out.print("Enter book number to return: ");
+        int index = scanner.nextInt() - 1;
+        scanner.nextLine();
+        Book book = bookList.getBook(index);
+        if (book != null && book.isBorrowed()) {
             book.returnBook();
-            borrowedBooks.remove(book);
+            System.out.println("You returned: " + book.getTitle());
+        } else {
+            System.out.println("Invalid choice or book not borrowed.");
         }
-    }
-
-    public List<Book> getBorrowedBooks() {
-        return borrowedBooks;
     }
 }

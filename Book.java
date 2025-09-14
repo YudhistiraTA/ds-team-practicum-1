@@ -28,4 +28,9 @@ public class Book {
     public void returnBook() {
         isBorrowed = false;
     }
+
+    @Override
+    public String toString() {
+        return title + " by " + author + (isBorrowed ? " (Borrowed)" : " (Available)");
+    }
 }
