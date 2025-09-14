@@ -65,8 +65,7 @@ public class Menu {
                 }
             }
             case 7 -> {
-                Login login = new Login();
-                user = login.login();
+                user = User.login();
             }
             case 0 -> {
                 System.out.println("Exiting...");
