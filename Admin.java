@@ -11,6 +11,7 @@ public class Admin extends User {
     }
 
     public void addBook(BookList bookList) {
+        scanner.nextLine(); // Consume newline
         System.out.print("Enter book title: ");
         String title = scanner.nextLine();
         System.out.print("Enter book author: ");
