@@ -9,7 +9,7 @@ public class App {
         bookList.addBook(new Book("Clean Code", "Robert C. Martin"));
         bookList.addBook(new Book("Java Programming", "James Gosling"));
 
-        LoginSystem loginSystem = new LoginSystem();
+        LoginSystem loginSystem = new LoginSystem(scanner);
         User user = null;
 
         // Loop login sampai berhasil

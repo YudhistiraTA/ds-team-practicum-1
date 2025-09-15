@@ -28,4 +28,8 @@ public class Book {
     public void returnBook() {
         isBorrowed = false;
     }
+
+    public String toString() {
+        return title + " by " + author + (isBorrowed ? " (Borrowed)" : "");
+    }
 }
