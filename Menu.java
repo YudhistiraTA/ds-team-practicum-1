@@ -15,11 +15,12 @@ public class Menu {
     private void display() {
         System.out.println("Welcome, " + user.getName());
         System.out.println("1. View Books");
-        System.out.println("2. Borrow Book");
-        System.out.println("3. Return Book");
-        if (user instanceof Admin) {
-            System.out.println("4. Add Book");
-            System.out.println("5. Remove Book");
+        if (user instanceof Member) {
+            System.out.println("2. Borrow Book");
+            System.out.println("3. Return Book");
+        } else {
+            System.out.println("2. Add Book");
+            System.out.println("3. Remove Book");
         }
         System.out.println("0. Exit");
     }
@@ -32,23 +33,17 @@ public class Menu {
                 books.print();
                 break;
             case 2:
-                // Borrow book logic
-                break;
-            case 3:
-                // Return book logic
-                break;
-            case 4:
-                if (user instanceof Admin) {
-                    // Add book logic
+                if (user instanceof Member) {
+                    ((Member) user).borrowBook(books);
                 } else {
-                    System.out.println("Invalid option.");
+                    ((Admin) user).addBook(books);
                 }
                 break;
-            case 5:
-                if (user instanceof Admin) {
-                    // Remove book logic
+            case 3:
+                if (user instanceof Member) {
+                    ((Member) user).returnBook(books);
                 } else {
-                    System.out.println("Invalid option.");
+                    ((Admin) user).removeBook(books);
                 }
                 break;
             case 0:
