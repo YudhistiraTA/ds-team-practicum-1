@@ -20,6 +20,19 @@ You may also use the provided `docker-compose.yaml` by using the following comma
 docker compose run --rm practicum
 ```
 
+# Login Information
+
+For Admin login, use the following credentials
+```
+username: admin01
+password: adminpass
+```
+For Member login, use the following
+```
+username: member01
+password: memberpass
+```
+
 # Assignment For
 
 Data Structures and Algorithm Analysis
