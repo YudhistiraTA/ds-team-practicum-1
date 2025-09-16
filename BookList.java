@@ -17,9 +17,9 @@ public class BookList {
         }
     }
 
-    public Book findBook(String title) {
+    public Book findBook(String substring) {
         return books.stream()
-                .filter(b -> b.getTitle().equalsIgnoreCase(title))
+                .filter(b -> b.getTitle().toLowerCase().contains(substring.toLowerCase()))
                 .findFirst()
                 .orElse(null);
     }

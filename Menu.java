@@ -22,6 +22,7 @@ public class Menu {
             System.out.println("2. Add Book");
             System.out.println("3. Remove Book");
         }
+        System.out.println("4. Find Book");
         System.out.println("0. Exit");
     }
 
@@ -44,6 +45,17 @@ public class Menu {
                     ((Member) user).returnBook(books);
                 } else {
                     ((Admin) user).removeBook(books);
+                }
+                break;
+            case 4:
+                System.out.println("Enter title substring to search:");
+                scanner.nextLine(); // consume newline
+                String substring = scanner.nextLine();
+                Book foundBook = books.findBook(substring);
+                if (foundBook != null) {
+                    System.out.println("Found: " + foundBook.getTitle() + " by " + foundBook.getAuthor());
+                } else {
+                    System.out.println("No book found with that title.");
                 }
                 break;
             case 0:
